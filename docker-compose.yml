@@ -2,7 +2,6 @@ version: "3.9"
 
 services:
   flask_app:
-    container_name: flask_app
     labels:
       shipyard.route: '/'
     image: francescoxx/flask_live_app:1.0.0
@@ -14,7 +13,6 @@ services:
     depends_on:
       - flask_db
   flask_db:
-    container_name: flask_db
     image: postgres:12
     ports:
       - "5432:5432"
@@ -26,5 +24,5 @@ services:
       - pgdata:/var/lib/postgresql/data
 
 volumes:
-  pgdata: {}
+  pgdata:
     
